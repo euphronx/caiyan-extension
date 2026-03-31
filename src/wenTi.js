@@ -1,21 +1,19 @@
 async function wenTi(date) {
   const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/question/get?date=${date}`, {
     headers: {
-      accept: "*/*",
+      "accept": "*/*",
       "accept-language": "zh-CN,zh;q=0.9",
       "cache-control": "no-cache",
       "fun-device": "web",
-      pragma: "no-cache",
-      priority: "u=1, i",
+      "pragma": "no-cache",
+      "priority": "u=1, i",
       "sec-ch-ua": '"Microsoft Edge";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
-      Referer: "https://xiaoce.fun/question",
+      "Referer": "https://xiaoce.fun/question",
     },
-    body: null,
-    method: "GET",
   });
 
   const json = await result.json();

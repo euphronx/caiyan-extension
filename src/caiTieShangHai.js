@@ -3,18 +3,18 @@ async function caiTieShangHai(date) {
     `https://xiaoce.fun/api/v0/quiz/daily/metro/get?date=${date}&city=%E4%B8%8A%E6%B5%B7`,
     {
       headers: {
-        accept: "*/*",
+        "accept": "*/*",
         "accept-language": "zh-CN,zh;q=0.9",
         "cache-control": "no-cache",
         "fun-device": "web",
-        pragma: "no-cache",
-        priority: "u=1, i",
+        "pragma": "no-cache",
+        "priority": "u=1, i",
         "sec-ch-ua": '"Microsoft Edge";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
         "sec-gpc": "1",
-        Referer: "https://xiaoce.fun/metro/shanghai",
+        "Referer": "https://xiaoce.fun/metro/shanghai",
       },
     }
   );

@@ -1,18 +1,18 @@
 async function baiKe(date) {
   const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/baike/get?date=${date}`, {
     headers: {
-      accept: "*/*",
+      "accept": "*/*",
       "accept-language": "zh-CN,zh;q=0.9",
       "cache-control": "no-cache",
       "fun-device": "web",
-      pragma: "no-cache",
-      priority: "u=1, i",
+      "pragma": "no-cache",
+      "priority": "u=1, i",
       "sec-ch-ua": '"Chromium";v="142", "Microsoft Edge";v="142", "Not_A Brand";v="99"',
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
-      Referer: "https://xiaoce.fun/baike",
+      "Referer": "https://xiaoce.fun/baike",
     },
   });
   const json = await result.json();

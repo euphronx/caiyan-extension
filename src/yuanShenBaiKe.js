@@ -1,20 +1,23 @@
-async function geCi(date) {
-  const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/lyric/get?date=${date}`, {
-    headers: {
-      "accept": "*/*",
-      "accept-language": "zh-CN,zh;q=0.9",
-      "cache-control": "no-cache",
-      "fun-device": "web",
-      "pragma": "no-cache",
-      "priority": "u=1, i",
-      "sec-ch-ua": '"Chromium";v="142", "Microsoft Edge";v="142", "Not_A Brand";v="99"',
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "sec-gpc": "1",
-      "Referer": "https://xiaoce.fun/lyric",
-    },
-  });
+async function yuanShenBaiKe(date) {
+  const result = await fetch(
+    `https://xiaoce.fun/api/v0/quiz/daily/baike/get?date=${date}&subType=genshin`,
+    {
+      headers: {
+        "accept": "*/*",
+        "accept-language": "en,zh-CN;q=0.9,zh;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+        "cache-control": "no-cache",
+        "fun-device": "web",
+        "pragma": "no-cache",
+        "priority": "u=1, i",
+        "sec-ch-ua": '"Chromium";v="146", "Not-A.Brand";v="24", "Microsoft Edge";v="146"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "sec-gpc": "1",
+        "Referer": "https://xiaoce.fun/baike/genshin",
+      },
+    }
+  );
   const json = await result.json();
   const answer = json.data.data.title;
 
@@ -50,4 +53,4 @@ async function geCi(date) {
   return "done";
 }
 
-export { geCi };
+export { yuanShenBaiKe };

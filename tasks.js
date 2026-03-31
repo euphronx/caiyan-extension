@@ -29,6 +29,12 @@ import { tianShengSiGe } from "./src/tianShengSiGe.js";
 import { tianShengJiuGe } from "./src/tianShengJiuGe.js";
 import { caiHan } from "./src/caiHan.js";
 import { tianFan } from "./src/tianFan.js";
+import { caiBin } from "./src/caiBin.js";
+import { yuanShenBaiKe } from "./src/yuanShenBaiKe.js";
+import { MCCaiWu } from "./src/MCCaiWu.js";
+import { caiWu } from "./src/caiWu.js";
+import { MCBaiKe } from "./src/MCBaiKe.js";
+import { liShiBaiKe } from "./src/liShiBaiKe.js";
 
 export const taskFunctions = {
   baiKe,
@@ -62,4 +68,10 @@ export const taskFunctions = {
   tianShengJiuGe,
   caiHan,
   tianFan,
+  caiBin,
+  yuanShenBaiKe,
+  MCCaiWu,
+  caiWu,
+  MCBaiKe,
+  liShiBaiKe,
 };

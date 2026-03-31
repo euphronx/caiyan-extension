@@ -65,6 +65,7 @@ async function tianFan(date) {
   ];
 
   // input answer
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // Requires time to load all the components
   for (let i = 0; i < 9; i++) {
     const input = inputs[i],
       ans = answer[i];
@@ -75,7 +76,7 @@ async function tianFan(date) {
     )) {
       if (btn.textContent.replaceAll(" ", "") === ans) {
         btn.click();
-        await new Promise((resolve) => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for longer time
       }
     }
   }

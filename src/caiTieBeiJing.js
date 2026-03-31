@@ -3,18 +3,18 @@ async function caiTieBeiJing(date) {
     `https://xiaoce.fun/api/v0/quiz/daily/metro/get?date=${date}&city=%E5%8C%97%E4%BA%AC`,
     {
       headers: {
-        accept: "*/*",
+        "accept": "*/*",
         "accept-language": "zh-CN,zh;q=0.9",
         "cache-control": "no-cache",
         "fun-device": "web",
-        pragma: "no-cache",
-        priority: "u=1, i",
+        "pragma": "no-cache",
+        "priority": "u=1, i",
         "sec-ch-ua": '"Microsoft Edge";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
         "sec-gpc": "1",
-        Referer: "https://xiaoce.fun/metro",
+        "Referer": "https://xiaoce.fun/metro",
       },
     }
   );

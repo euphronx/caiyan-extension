@@ -1,6 +1,6 @@
 import { taskFunctions } from "./tasks.js";
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
   if (message.action === "fuckIt" && message.tasks) {
     handleTasks(message.tasks, message.closeAtFinish);
   }
@@ -46,6 +46,12 @@ const urls = {
   tianShengJiuGe: "fillprovince/33",
   caiHan: "guessfunc",
   tianFan: "fillanime",
+  caiBin: "guessdisease",
+  yuanShenBaiKe: "baike/genshin",
+  MCBaiKe: "baike/mc",
+  liShiBaiKe: "baike/history",
+  MCCaiWu: "mcitem",
+  caiWu: "five",
 };
 
 async function handleTasks(tasks, closeAtFinish) {
@@ -53,6 +59,17 @@ async function handleTasks(tasks, closeAtFinish) {
     const tab = await chrome.tabs.create({
       url: `https://xiaoce.fun/${urls[task]}`,
     });
+
+    if (task === "caiHan") {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: function () {
+          localStorage.setItem("guessfunc_keyboard_enabled_", "false");
+        },
+      });
+      await chrome.tabs.reload(tab.id);
+      console.log("reloaded");
+    }
 
     // wait for document loaded
     await new Promise((resolve) => {
@@ -65,6 +82,8 @@ async function handleTasks(tasks, closeAtFinish) {
 
       chrome.tabs.onUpdated.addListener(listener);
     });
+
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     // execute function
     try {

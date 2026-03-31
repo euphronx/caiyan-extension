@@ -1,18 +1,18 @@
 async function xiangYin(date) {
   const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/accent/get?date=${date}`, {
     headers: {
-      accept: "*/*",
+      "accept": "*/*",
       "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
       "cache-control": "no-cache",
       "fun-device": "web",
-      pragma: "no-cache",
-      priority: "u=1, i",
+      "pragma": "no-cache",
+      "priority": "u=1, i",
       "sec-ch-ua": '"Microsoft Edge";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
-      Referer: "https://xiaoce.fun/accent",
+      "Referer": "https://xiaoce.fun/accent",
     },
   });
   const json = await result.json();
@@ -21,18 +21,18 @@ async function xiangYin(date) {
   // get the list of answers
   const getList = await fetch("https://xiaoce.fun/api/v0/quiz/daily/chinale/getList", {
     headers: {
-      accept: "*/*",
+      "accept": "*/*",
       "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
       "cache-control": "no-cache",
       "fun-device": "web",
-      pragma: "no-cache",
-      priority: "u=1, i",
+      "pragma": "no-cache",
+      "priority": "u=1, i",
       "sec-ch-ua": '"Microsoft Edge";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
-      Referer: "https://xiaoce.fun/accent",
+      "Referer": "https://xiaoce.fun/accent",
     },
   });
   const list = await getList.json();

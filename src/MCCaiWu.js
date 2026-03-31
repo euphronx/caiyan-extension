@@ -1,22 +1,22 @@
-async function guoJing(date) {
-  const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/countryScene/get?date=${date}`, {
+async function MCCaiWu(date) {
+  const result = await fetch(`https://xiaoce.fun/api/v0/quiz/daily/mc/get?date=${date}`, {
     headers: {
       "accept": "*/*",
-      "accept-language": "zh-CN,zh;q=0.9",
+      "accept-language": "en,zh-CN;q=0.9,zh;q=0.8,en-GB;q=0.7,en-US;q=0.6",
       "cache-control": "no-cache",
       "fun-device": "web",
       "pragma": "no-cache",
       "priority": "u=1, i",
-      "sec-ch-ua": '"Chromium";v="142", "Microsoft Edge";v="142", "Not_A Brand";v="99"',
+      "sec-ch-ua": '"Chromium";v="146", "Not-A.Brand";v="24", "Microsoft Edge";v="146"',
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
-      "Referer": "https://xiaoce.fun/cityscene",
+      "Referer": "https://xiaoce.fun/mcitem",
     },
   });
   const json = await result.json();
-  const answer = json.data.data.more;
+  const answer = json.data.item.displayNameZh;
 
   // validate input element
   let input;
@@ -39,14 +39,12 @@ async function guoJing(date) {
   Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(cardInput, answer);
   cardInput.dispatchEvent(new Event("input", { bubbles: true }));
   await new Promise((resolve) => setTimeout(resolve, 200));
-  for (const ele of document.querySelectorAll(
-    "button.ant-btn.ant-btn-default.ant-btn-color-default.ant-btn-variant-outlined"
-  )) {
-    if (ele.textContent.replaceAll(" ", "") === answer) {
+  for (const ele of document.querySelectorAll("div.ant-card-body")) {
+    if (ele.textContent.replaceAll(" ", "").replace(/[a-zA-Z]/g, "") === answer) {
       ele.click();
       break;
     }
   }
 }
 
-export { guoJing };
+export { MCCaiWu };
